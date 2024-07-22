@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E8163FEB2C4C4E94005306B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8163FEA2C4C4E94005306B2 /* AppDelegate.swift */; };
+		E8163FED2C4C4E94005306B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8163FEC2C4C4E94005306B2 /* SceneDelegate.swift */; };
+		E8163FEF2C4C4E94005306B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8163FEE2C4C4E94005306B2 /* ViewController.swift */; };
+		E8163FF22C4C4E94005306B2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E8163FF12C4C4E94005306B2 /* Base */; };
+		E8163FF52C4C4E94005306B2 /* KonumLA.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8163FF32C4C4E94005306B2 /* KonumLA.xcdatamodeld */; };
+		E8163FF72C4C4E96005306B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8163FF62C4C4E96005306B2 /* Assets.xcassets */; };
+		E8163FFA2C4C4E96005306B2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E8163FF92C4C4E96005306B2 /* Base */; };
+		E81640072C4C58E3005306B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E81640062C4C58E3005306B2 /* GoogleService-Info.plist */; };
+		E816400A2C4C5EDA005306B2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E81640092C4C5EDA005306B2 /* FirebaseAnalytics */; };
+		E816400C2C4C5EDA005306B2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E816400B2C4C5EDA005306B2 /* FirebaseAuth */; };
+		E816400E2C4C5EDA005306B2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E816400D2C4C5EDA005306B2 /* FirebaseFirestore */; };
+		E81640102C4C5EDA005306B2 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E816400F2C4C5EDA005306B2 /* FirebaseStorage */; };
+		E81640122C4C6128005306B2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81640112C4C6128005306B2 /* User.swift */; };
+		E81640142C4C644F005306B2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81640132C4C644F005306B2 /* Post.swift */; };
+		E81640182C4C663A005306B2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81640172C4C663A005306B2 /* Message.swift */; };
+		E816401A2C4C69EC005306B2 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81640192C4C69EC005306B2 /* LoginController.swift */; };
+		E8930F512C4EC3B100E5C2CF /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8930F502C4EC3B100E5C2CF /* SignUpController.swift */; };
+		E8930F532C4ED34900E5C2CF /* AuthViewModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8930F522C4ED34900E5C2CF /* AuthViewModelController.swift */; };
+		E8930F552C4EEB5C00E5C2CF /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8930F542C4EEB5C00E5C2CF /* HomePageController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E8163FE72C4C4E94005306B2 /* KonumLA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KonumLA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8163FEA2C4C4E94005306B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E8163FEC2C4C4E94005306B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E8163FEE2C4C4E94005306B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E8163FF12C4C4E94005306B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E8163FF42C4C4E94005306B2 /* KonumLA.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KonumLA.xcdatamodel; sourceTree = "<group>"; };
+		E8163FF62C4C4E96005306B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8163FF92C4C4E96005306B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E8163FFB2C4C4E96005306B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E81640062C4C58E3005306B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E81640112C4C6128005306B2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E81640132C4C644F005306B2 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		E81640172C4C663A005306B2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E81640192C4C69EC005306B2 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		E8930F502C4EC3B100E5C2CF /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		E8930F522C4ED34900E5C2CF /* AuthViewModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModelController.swift; sourceTree = "<group>"; };
+		E8930F542C4EEB5C00E5C2CF /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8163FE42C4C4E94005306B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E816400A2C4C5EDA005306B2 /* FirebaseAnalytics in Frameworks */,
+				E81640102C4C5EDA005306B2 /* FirebaseStorage in Frameworks */,
+				E816400C2C4C5EDA005306B2 /* FirebaseAuth in Frameworks */,
+				E816400E2C4C5EDA005306B2 /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E8163FDE2C4C4E94005306B2 = {
+			isa = PBXGroup;
+			children = (
+				E8163FE92C4C4E94005306B2 /* KonumLA */,
+				E8163FE82C4C4E94005306B2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E8163FE82C4C4E94005306B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8163FE72C4C4E94005306B2 /* KonumLA.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8163FE92C4C4E94005306B2 /* KonumLA */ = {
+			isa = PBXGroup;
+			children = (
+				E81640052C4C52CD005306B2 /* Service */,
+				E81640022C4C4EE3005306B2 /* Model */,
+				E81640032C4C4EEA005306B2 /* View */,
+				E81640042C4C4EF1005306B2 /* ViewModel */,
+				E8163FEA2C4C4E94005306B2 /* AppDelegate.swift */,
+				E8163FEC2C4C4E94005306B2 /* SceneDelegate.swift */,
+				E8163FEE2C4C4E94005306B2 /* ViewController.swift */,
+				E8163FF02C4C4E94005306B2 /* Main.storyboard */,
+				E8163FF62C4C4E96005306B2 /* Assets.xcassets */,
+				E8163FF82C4C4E96005306B2 /* LaunchScreen.storyboard */,
+				E8163FFB2C4C4E96005306B2 /* Info.plist */,
+				E81640062C4C58E3005306B2 /* GoogleService-Info.plist */,
+				E8163FF32C4C4E94005306B2 /* KonumLA.xcdatamodeld */,
+			);
+			path = KonumLA;
+			sourceTree = "<group>";
+		};
+		E81640022C4C4EE3005306B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E81640112C4C6128005306B2 /* User.swift */,
+				E81640132C4C644F005306B2 /* Post.swift */,
+				E81640172C4C663A005306B2 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E81640032C4C4EEA005306B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E81640192C4C69EC005306B2 /* LoginController.swift */,
+				E8930F502C4EC3B100E5C2CF /* SignUpController.swift */,
+				E8930F542C4EEB5C00E5C2CF /* HomePageController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E81640042C4C4EF1005306B2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E8930F522C4ED34900E5C2CF /* AuthViewModelController.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E81640052C4C52CD005306B2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8163FE62C4C4E94005306B2 /* KonumLA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8163FFE2C4C4E96005306B2 /* Build configuration list for PBXNativeTarget "KonumLA" */;
+			buildPhases = (
+				E8163FE32C4C4E94005306B2 /* Sources */,
+				E8163FE42C4C4E94005306B2 /* Frameworks */,
+				E8163FE52C4C4E94005306B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KonumLA;
+			packageProductDependencies = (
+				E81640092C4C5EDA005306B2 /* FirebaseAnalytics */,
+				E816400B2C4C5EDA005306B2 /* FirebaseAuth */,
+				E816400D2C4C5EDA005306B2 /* FirebaseFirestore */,
+				E816400F2C4C5EDA005306B2 /* FirebaseStorage */,
+			);
+			productName = KonumLA;
+			productReference = E8163FE72C4C4E94005306B2 /* KonumLA.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8163FDF2C4C4E94005306B2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					E8163FE62C4C4E94005306B2 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = E8163FE22C4C4E94005306B2 /* Build configuration list for PBXProject "KonumLA" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E8163FDE2C4C4E94005306B2;
+			packageReferences = (
+				E81640082C4C5EDA005306B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = E8163FE82C4C4E94005306B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8163FE62C4C4E94005306B2 /* KonumLA */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8163FE52C4C4E94005306B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8163FF72C4C4E96005306B2 /* Assets.xcassets in Resources */,
+				E81640072C4C58E3005306B2 /* GoogleService-Info.plist in Resources */,
+				E8163FFA2C4C4E96005306B2 /* Base in Resources */,
+				E8163FF22C4C4E94005306B2 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8163FE32C4C4E94005306B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8930F532C4ED34900E5C2CF /* AuthViewModelController.swift in Sources */,
+				E8163FEF2C4C4E94005306B2 /* ViewController.swift in Sources */,
+				E8163FEB2C4C4E94005306B2 /* AppDelegate.swift in Sources */,
+				E8930F512C4EC3B100E5C2CF /* SignUpController.swift in Sources */,
+				E8163FED2C4C4E94005306B2 /* SceneDelegate.swift in Sources */,
+				E81640142C4C644F005306B2 /* Post.swift in Sources */,
+				E81640122C4C6128005306B2 /* User.swift in Sources */,
+				E816401A2C4C69EC005306B2 /* LoginController.swift in Sources */,
+				E8163FF52C4C4E94005306B2 /* KonumLA.xcdatamodeld in Sources */,
+				E81640182C4C663A005306B2 /* Message.swift in Sources */,
+				E8930F552C4EEB5C00E5C2CF /* HomePageController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E8163FF02C4C4E94005306B2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8163FF12C4C4E94005306B2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E8163FF82C4C4E96005306B2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8163FF92C4C4E96005306B2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E8163FFC2C4C4E96005306B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E8163FFD2C4C4E96005306B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8163FFF2C4C4E96005306B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 798B8TV68D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KonumLA/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erayinal.KonumLA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E81640002C4C4E96005306B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 798B8TV68D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KonumLA/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.erayinal.KonumLA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8163FE22C4C4E94005306B2 /* Build configuration list for PBXProject "KonumLA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8163FFC2C4C4E96005306B2 /* Debug */,
+				E8163FFD2C4C4E96005306B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8163FFE2C4C4E96005306B2 /* Build configuration list for PBXNativeTarget "KonumLA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8163FFF2C4C4E96005306B2 /* Debug */,
+				E81640002C4C4E96005306B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E81640082C4C5EDA005306B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.29.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E81640092C4C5EDA005306B2 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E81640082C4C5EDA005306B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		E816400B2C4C5EDA005306B2 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E81640082C4C5EDA005306B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E816400D2C4C5EDA005306B2 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E81640082C4C5EDA005306B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		E816400F2C4C5EDA005306B2 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E81640082C4C5EDA005306B2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		E8163FF32C4C4E94005306B2 /* KonumLA.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E8163FF42C4C4E94005306B2 /* KonumLA.xcdatamodel */,
+			);
+			currentVersion = E8163FF42C4C4E94005306B2 /* KonumLA.xcdatamodel */;
+			path = KonumLA.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E8163FDF2C4C4E94005306B2 /* Project object */;
+}
