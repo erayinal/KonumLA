@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginController: UIViewController {
     
@@ -27,6 +28,24 @@ class LoginController: UIViewController {
     
     @objc func signUpLabelTapped(){
         performSegue(withIdentifier: "toSignUpPage", sender: nil)
+    }
+    
+    
+    @IBAction func loginButton(_ sender: Any) {
+        if(emailTextLabel.text != "" && passwordTextLabel.text != ""){
+            
+            Auth.auth().signIn(withEmail: emailTextLabel.text!, password: passwordTextLabel.text!) { authData, error in
+                if(error != nil){
+                    self.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Eror")
+                }
+                else{
+                    self.performSegue(withIdentifier: "fromLoginToHomeVC", sender: nil)
+                }
+            }
+            
+        }else{
+            self.makeAlert(title: "Giriş Hatası!", message: "Tüm alanlar doldurulmalı...")
+        }
     }
     
 

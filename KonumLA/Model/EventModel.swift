@@ -1,8 +1,8 @@
 //
-//  Post.swift
+//  EventModel.swift
 //  KonumLA
 //
-//  Created by Eray İnal on 21.07.2024.
+//  Created by Eray İnal on 23.07.2024.
 //
 
 import Foundation
@@ -24,3 +24,4 @@ struct Post{
     }
     
 }
+

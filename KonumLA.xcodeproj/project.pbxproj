@@ -20,9 +20,18 @@
 		E816400E2C4C5EDA005306B2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E816400D2C4C5EDA005306B2 /* FirebaseFirestore */; };
 		E81640102C4C5EDA005306B2 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E816400F2C4C5EDA005306B2 /* FirebaseStorage */; };
 		E81640122C4C6128005306B2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81640112C4C6128005306B2 /* User.swift */; };
-		E81640142C4C644F005306B2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81640132C4C644F005306B2 /* Post.swift */; };
 		E81640182C4C663A005306B2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81640172C4C663A005306B2 /* Message.swift */; };
 		E816401A2C4C69EC005306B2 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81640192C4C69EC005306B2 /* LoginController.swift */; };
+		E830A1BA2C51FCF400082E49 /* ProfilePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830A1B92C51FCF400082E49 /* ProfilePageController.swift */; };
+		E830A1BC2C52673C00082E49 /* ProfileInfoPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830A1BB2C52673C00082E49 /* ProfileInfoPageController.swift */; };
+		E830A1BF2C52684800082E49 /* ProfileChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830A1BE2C52684800082E49 /* ProfileChangePasswordController.swift */; };
+		E830A1C22C52687000082E49 /* ProfileSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830A1C12C52687000082E49 /* ProfileSettingsController.swift */; };
+		E830A1C42C52689400082E49 /* ProfileHelpSupportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830A1C32C52689400082E49 /* ProfileHelpSupportController.swift */; };
+		E830A1C62C526B7A00082E49 /* ProfileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830A1C52C526B7A00082E49 /* ProfileTableCell.swift */; };
+		E830A1C82C52707100082E49 /* ProfileSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830A1C72C52707100082E49 /* ProfileSettingsModel.swift */; };
+		E88444E62C4FECBC009FCC71 /* CircleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88444E52C4FECBC009FCC71 /* CircleCollectionViewCell.swift */; };
+		E88444E82C4FFCC9009FCC71 /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88444E72C4FFCC9009FCC71 /* CategoriesModel.swift */; };
+		E88444EA2C5018BA009FCC71 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88444E92C5018BA009FCC71 /* EventModel.swift */; };
 		E8930F512C4EC3B100E5C2CF /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8930F502C4EC3B100E5C2CF /* SignUpController.swift */; };
 		E8930F532C4ED34900E5C2CF /* AuthViewModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8930F522C4ED34900E5C2CF /* AuthViewModelController.swift */; };
 		E8930F552C4EEB5C00E5C2CF /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8930F542C4EEB5C00E5C2CF /* HomePageController.swift */; };
@@ -40,9 +49,18 @@
 		E8163FFB2C4C4E96005306B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E81640062C4C58E3005306B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E81640112C4C6128005306B2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E81640132C4C644F005306B2 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		E81640172C4C663A005306B2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E81640192C4C69EC005306B2 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		E830A1B92C51FCF400082E49 /* ProfilePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageController.swift; sourceTree = "<group>"; };
+		E830A1BB2C52673C00082E49 /* ProfileInfoPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoPageController.swift; sourceTree = "<group>"; };
+		E830A1BE2C52684800082E49 /* ProfileChangePasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileChangePasswordController.swift; sourceTree = "<group>"; };
+		E830A1C12C52687000082E49 /* ProfileSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsController.swift; sourceTree = "<group>"; };
+		E830A1C32C52689400082E49 /* ProfileHelpSupportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHelpSupportController.swift; sourceTree = "<group>"; };
+		E830A1C52C526B7A00082E49 /* ProfileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableCell.swift; sourceTree = "<group>"; };
+		E830A1C72C52707100082E49 /* ProfileSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsModel.swift; sourceTree = "<group>"; };
+		E88444E52C4FECBC009FCC71 /* CircleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewCell.swift; sourceTree = "<group>"; };
+		E88444E72C4FFCC9009FCC71 /* CategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
+		E88444E92C5018BA009FCC71 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		E8930F502C4EC3B100E5C2CF /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		E8930F522C4ED34900E5C2CF /* AuthViewModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModelController.swift; sourceTree = "<group>"; };
 		E8930F542C4EEB5C00E5C2CF /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
@@ -103,8 +121,10 @@
 			isa = PBXGroup;
 			children = (
 				E81640112C4C6128005306B2 /* User.swift */,
-				E81640132C4C644F005306B2 /* Post.swift */,
+				E88444E92C5018BA009FCC71 /* EventModel.swift */,
 				E81640172C4C663A005306B2 /* Message.swift */,
+				E88444E72C4FFCC9009FCC71 /* CategoriesModel.swift */,
+				E830A1C72C52707100082E49 /* ProfileSettingsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -112,9 +132,12 @@
 		E81640032C4C4EEA005306B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E830A1BD2C52681C00082E49 /* Profile */,
+				E830A1B92C51FCF400082E49 /* ProfilePageController.swift */,
 				E81640192C4C69EC005306B2 /* LoginController.swift */,
 				E8930F502C4EC3B100E5C2CF /* SignUpController.swift */,
 				E8930F542C4EEB5C00E5C2CF /* HomePageController.swift */,
+				E88444E52C4FECBC009FCC71 /* CircleCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,6 +155,18 @@
 			children = (
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		E830A1BD2C52681C00082E49 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E830A1BB2C52673C00082E49 /* ProfileInfoPageController.swift */,
+				E830A1C12C52687000082E49 /* ProfileSettingsController.swift */,
+				E830A1BE2C52684800082E49 /* ProfileChangePasswordController.swift */,
+				E830A1C32C52689400082E49 /* ProfileHelpSupportController.swift */,
+				E830A1C52C526B7A00082E49 /* ProfileTableCell.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,15 +251,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8930F532C4ED34900E5C2CF /* AuthViewModelController.swift in Sources */,
+				E830A1C62C526B7A00082E49 /* ProfileTableCell.swift in Sources */,
 				E8163FEF2C4C4E94005306B2 /* ViewController.swift in Sources */,
+				E830A1BC2C52673C00082E49 /* ProfileInfoPageController.swift in Sources */,
+				E830A1C82C52707100082E49 /* ProfileSettingsModel.swift in Sources */,
+				E88444E62C4FECBC009FCC71 /* CircleCollectionViewCell.swift in Sources */,
 				E8163FEB2C4C4E94005306B2 /* AppDelegate.swift in Sources */,
 				E8930F512C4EC3B100E5C2CF /* SignUpController.swift in Sources */,
+				E88444E82C4FFCC9009FCC71 /* CategoriesModel.swift in Sources */,
 				E8163FED2C4C4E94005306B2 /* SceneDelegate.swift in Sources */,
-				E81640142C4C644F005306B2 /* Post.swift in Sources */,
+				E830A1C42C52689400082E49 /* ProfileHelpSupportController.swift in Sources */,
 				E81640122C4C6128005306B2 /* User.swift in Sources */,
+				E830A1C22C52687000082E49 /* ProfileSettingsController.swift in Sources */,
+				E88444EA2C5018BA009FCC71 /* EventModel.swift in Sources */,
 				E816401A2C4C69EC005306B2 /* LoginController.swift in Sources */,
+				E830A1BA2C51FCF400082E49 /* ProfilePageController.swift in Sources */,
 				E8163FF52C4C4E94005306B2 /* KonumLA.xcdatamodeld in Sources */,
 				E81640182C4C663A005306B2 /* Message.swift in Sources */,
+				E830A1BF2C52684800082E49 /* ProfileChangePasswordController.swift in Sources */,
 				E8930F552C4EEB5C00E5C2CF /* HomePageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
