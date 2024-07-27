@@ -23,6 +23,7 @@ class LoginController: UIViewController {
         signUpLabel.addGestureRecognizer(tapGesture)
         signUpLabel.isUserInteractionEnabled = true
         
+        
     }
     
     
@@ -36,7 +37,7 @@ class LoginController: UIViewController {
             
             Auth.auth().signIn(withEmail: emailTextLabel.text!, password: passwordTextLabel.text!) { authData, error in
                 if(error != nil){
-                    self.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Eror")
+                    self.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Error")
                 }
                 else{
                     self.performSegue(withIdentifier: "fromLoginToHomeVC", sender: nil)

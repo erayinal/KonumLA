@@ -72,21 +72,26 @@ class ProfilePageController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
+
+
     
     @IBAction func logOutButton(_ sender: Any) {
-        do{
+        do {
             try Auth.auth().signOut()
-            self.performSegue(withIdentifier: "toLoginPageFromProfile", sender: nil)
-        } catch{
-            print("Error")
+            
+            if let tabBarController = self.tabBarController {
+                tabBarController.selectedIndex = 0
+            }
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            loginVC.modalPresentationStyle = .fullScreen
+            self.present(loginVC, animated: true) {
+                self.navigationController?.popToRootViewController(animated: false)
+            }
+            
+        } catch {
+            print("Error logging out")
         }
     }
     
