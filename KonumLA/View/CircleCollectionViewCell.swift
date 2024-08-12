@@ -17,10 +17,10 @@ class CircleCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         
         imageView.layer.masksToBounds = true
-        imageView.layer.cornerRadius = 60.0/2.0
+        imageView.layer.cornerRadius = 70.0/2.0
         //imageView.backgroundColor = .blue
         imageView.layer.borderWidth = 2
-        imageView.layer.borderColor = UIColor.red.cgColor
+        imageView.layer.borderColor = UIColor.black.cgColor
         
         return imageView
     }()

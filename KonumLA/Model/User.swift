@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 struct User {
     
@@ -15,12 +16,13 @@ struct User {
     let bio: String
     var postCount: Int
     
+    
+    
+    
 }
 
 
 
-
-import FirebaseAuth
 
 class AuthService{
     

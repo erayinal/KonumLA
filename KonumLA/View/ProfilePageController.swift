@@ -15,10 +15,10 @@ class ProfilePageController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var profileTableView: UITableView!
     
     let settingsArr:[ProfileSettingsModel] = [
-    ProfileSettingsModel(imageName: "ProfileTableImage", title: "Profile"),
-    ProfileSettingsModel(imageName: "SettingsTableImage", title: "Settings"),
-    ProfileSettingsModel(imageName: "ChangePasswordTableImage", title: "Change Password"),
-    ProfileSettingsModel(imageName: "SupportTableImage", title: "Help/Support")
+    ProfileSettingsModel(imageName: "ProfileTableImage", title: "Profil"),
+    ProfileSettingsModel(imageName: "SettingsTableImage", title: "Ayarlar"),
+    ProfileSettingsModel(imageName: "ChangePasswordTableImage", title: "Şifreyi Değiştir"),
+    ProfileSettingsModel(imageName: "SupportTableImage", title: "Yardım ve Destek")
     ]
 
     override func viewDidLoad() {
@@ -35,6 +35,7 @@ class ProfilePageController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileSettingsCell", for: indexPath) as! ProfileTableCell
+        cell.selectionStyle = .none
         cell.myImageView.image = UIImage(named: settingsArr[indexPath.row].imageName)
         cell.myLabelText.text = settingsArr[indexPath.row].title
         return cell
@@ -44,19 +45,19 @@ class ProfilePageController: UIViewController, UITableViewDelegate, UITableViewD
         let selectedItem = settingsArr[indexPath.row]
             
         switch selectedItem.title {
-            case "Profile":
+            case "Profil":
                 if let profileVC = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") {
                     navigationController?.pushViewController(profileVC, animated: true)
                 }
-            case "Settings":
+            case "Ayarlar":
                 if let settingsVC = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") {
                     navigationController?.pushViewController(settingsVC, animated: true)
                 }
-            case "Change Password":
+            case "Şifreyi Değiştir":
                 if let changePasswordVC = storyboard?.instantiateViewController(withIdentifier: "ChangePasswordViewController") {
                     navigationController?.pushViewController(changePasswordVC, animated: true)
                 }
-            case "Help/Support":
+            case "Yardım ve Destek":
                 if let helpVC = storyboard?.instantiateViewController(withIdentifier: "HelpViewController") {
                     navigationController?.pushViewController(helpVC, animated: true)
                 }
@@ -64,6 +65,9 @@ class ProfilePageController: UIViewController, UITableViewDelegate, UITableViewD
                 break
             }
         }
+    
+    
+    
     
     
     

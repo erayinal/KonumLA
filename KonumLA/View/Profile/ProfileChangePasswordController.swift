@@ -83,15 +83,49 @@ class ProfileChangePasswordController: UIViewController {
     
     @IBAction func changePasswordClicked(_ sender: Any) {
         
-        if(newPassTextField == newPassAgainImage){
+        guard let currentPassword = currentPassTextField.text, !currentPassword.isEmpty,
+                  let newPassword = newPassTextField.text, !newPassword.isEmpty,
+                  let newPasswordAgain = newPassAgainTextField.text, !newPasswordAgain.isEmpty
+        else {
+                self.makeAlert(title: "Boş alan olmamalı", message: "Tüm alanlar doldurulmalıdır")
+                return
+        }
+
+        guard newPassword == newPasswordAgain else {
+            // Hata mesajı göster: Yeni şifreler eşleşmiyor
+            makeAlert(title: "Şifreler Eşleşmiyor", message: "Yeni şifre ve şifre tekrarı birbirinden farklı")
+            return
+        }
+
+        let user = Auth.auth().currentUser
+            let credential = EmailAuthProvider.credential(withEmail: user?.email ?? "", password: currentPassword)
+
+        user?.reauthenticate(with: credential) { authResult, error in
+            if let error = error {
+                // Hata mesajı göster: Mevcut şifre yanlış
+                self.makeAlert(title: "Error", message: error.localizedDescription)
+                return
+            }
             
-            if(userVM.checkUserPassword(email: <#T##String#>, password: <#T##String#>, completion: <#T##(Bool, (any Error)?) -> Void#>))
-            
-        }else{
-            makeAlert(title: "Şifreler Uyuşmuyor", message: <#T##String#>)
+            user?.updatePassword(to: newPassword) { error in
+                if let error = error {
+                    // Hata mesajı göster: Şifre güncellenemedi
+                    self.makeAlert(title: "Şifre Değiştirilemedi", message: error.localizedDescription)
+                    return
+                }
+                
+                print("Password successfully updated")
+                
+                // Sol üst köşedeki 'Back' butonunu tetikle
+                self.navigationController?.popViewController(animated: true)
+            }
         }
         
+        
+        
     }
+    
+    
     
 
 

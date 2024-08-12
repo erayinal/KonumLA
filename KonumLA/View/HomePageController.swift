@@ -16,7 +16,7 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
     
     //Collection:
     private var collectionView: UICollectionView?
-    public let sizeOfCategoriesCircle = 60
+    public let sizeOfCategoriesCircle = 70
     
     let categoriesArr: [CategoriesModel] = [
         CategoriesModel(image: "partyCategoryImage", title: "Party"),
@@ -28,8 +28,7 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
         CategoriesModel(image: "tripCategoryImage", title: "Trip"),
         CategoriesModel(image: "technologyCategoryImage", title: "Technology"),
         CategoriesModel(image: "artCategoryImage", title: "Art"),
-        CategoriesModel(image: "cookingCategoryImage", title: "Cooking"),
-        // Daha fazla örnek ekleyebilirsiniz
+        CategoriesModel(image: "cookingCategoryImage", title: "Cooking")
     ]
     
     
@@ -39,6 +38,21 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
         
         verticalTableView.delegate = self
         verticalTableView.dataSource = self
+        
+        //Seperator:
+        verticalTableView.separatorStyle = .singleLine
+        verticalTableView.separatorColor = .black
+        verticalTableView.contentInset = UIEdgeInsets.zero
+        verticalTableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        
+        verticalTableView.estimatedSectionHeaderHeight = 0
+        verticalTableView.estimatedSectionFooterHeight = 0
+        
+        //asdf:
+        //verticalTableView.register(HomeEventsViewCell.self, forCellReuseIdentifier: "mainEventsCell")
+        
+        
         
         //Collection:
         let layout = UICollectionViewFlowLayout()
@@ -70,31 +84,30 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        var content = cell.defaultContentConfiguration()
-        cell.backgroundColor = .gray
+        let cell = verticalTableView.dequeueReusableCell(withIdentifier: "mainEventsCell", for: indexPath) as! HomeEventsViewCell
+        //var content = cell.defaultContentConfiguration()
+        cell.backgroundColor = .white
+        cell.selectionStyle = .none
         
-        content.text = "Eray"
+        //content.text = "Eray"
         
-        cell.contentConfiguration=content
-        
+        //cell.contentConfiguration=content
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 160
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10 // Her bir hücre arasında 10 piksel boşluk
+        return 0 // Her bir hücre arasında 10 piksel boşluk
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = .clear // Boşluk görünümü (renksiz)
-        return headerView
+        return nil
     }
+    
     
     
     
@@ -102,7 +115,7 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
     //Collection:
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionView?.frame = CGRect(x: 0, y: 290, width: Int(view.frame.size.width), height: sizeOfCategoriesCircle+20).integral
+        collectionView?.frame = CGRect(x: 0, y: 285, width: Int(view.frame.size.width), height: sizeOfCategoriesCircle+20).integral
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -36,6 +36,7 @@
 		E8930F532C4ED34900E5C2CF /* AuthViewModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8930F522C4ED34900E5C2CF /* AuthViewModelController.swift */; };
 		E8930F552C4EEB5C00E5C2CF /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8930F542C4EEB5C00E5C2CF /* HomePageController.swift */; };
 		E8A07A062C55135A0015D914 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A07A052C55135A0015D914 /* UserViewModel.swift */; };
+		E8FEA3922C6900F20035AF07 /* HomeEventsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FEA3912C6900F20035AF07 /* HomeEventsViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		E8930F522C4ED34900E5C2CF /* AuthViewModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModelController.swift; sourceTree = "<group>"; };
 		E8930F542C4EEB5C00E5C2CF /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
 		E8A07A052C55135A0015D914 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		E8FEA3912C6900F20035AF07 /* HomeEventsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventsViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				E8930F502C4EC3B100E5C2CF /* SignUpController.swift */,
 				E8930F542C4EEB5C00E5C2CF /* HomePageController.swift */,
 				E88444E52C4FECBC009FCC71 /* CircleCollectionViewCell.swift */,
+				E8FEA3912C6900F20035AF07 /* HomeEventsViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				E8930F512C4EC3B100E5C2CF /* SignUpController.swift in Sources */,
 				E88444E82C4FFCC9009FCC71 /* CategoriesModel.swift in Sources */,
 				E8163FED2C4C4E94005306B2 /* SceneDelegate.swift in Sources */,
+				E8FEA3922C6900F20035AF07 /* HomeEventsViewCell.swift in Sources */,
 				E830A1C42C52689400082E49 /* ProfileHelpSupportController.swift in Sources */,
 				E81640122C4C6128005306B2 /* User.swift in Sources */,
 				E830A1C22C52687000082E49 /* ProfileSettingsController.swift in Sources */,
