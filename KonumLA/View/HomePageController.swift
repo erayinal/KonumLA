@@ -6,11 +6,17 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class HomePageController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class HomePageController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MKMapViewDelegate, CLLocationManagerDelegate {
     
 
     @IBOutlet weak var verticalTableView: UITableView!
+    
+    //Map
+    @IBOutlet weak var mapView: MKMapView!
+    var locationManager = CLLocationManager()
     
     
     
@@ -19,16 +25,17 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
     public let sizeOfCategoriesCircle = 70
     
     let categoriesArr: [CategoriesModel] = [
+        CategoriesModel(image: "artCategoryImage2", title: "Art"),
+        CategoriesModel(image: "musicCategoryImage2", title: "Music"),
+        CategoriesModel(image: "cookingCategoryImage2", title: "Cooking"),
+        CategoriesModel(image: "technologyCategoryImage2", title: "Technology"),
+        CategoriesModel(image: "funCategoryImage2", title: "Fun"),
+        CategoriesModel(image: "celebrationCategoryImage2", title: "Celebrate"),
+        CategoriesModel(image: "joyCategoryImage2", title: "Joy"),
+        CategoriesModel(image: "sportsCategoryImage2", title: "Sports"),
+        CategoriesModel(image: "tripCategoryImage2", title: "Trip"),
         CategoriesModel(image: "partyCategoryImage", title: "Party"),
-        CategoriesModel(image: "funCategoryImage", title: "Fun"),
-        CategoriesModel(image: "celebrationCategoryImage", title: "Celebrate"),
-        CategoriesModel(image: "joyCategoryImage", title: "Joy"),
-        CategoriesModel(image: "musicCategoryImage", title: "Music"),
-        CategoriesModel(image: "sportsCategoryImage", title: "Sports"),
-        CategoriesModel(image: "tripCategoryImage", title: "Trip"),
-        CategoriesModel(image: "technologyCategoryImage", title: "Technology"),
-        CategoriesModel(image: "artCategoryImage", title: "Art"),
-        CategoriesModel(image: "cookingCategoryImage", title: "Cooking")
+        
     ]
     
     
@@ -38,6 +45,13 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
         
         verticalTableView.delegate = self
         verticalTableView.dataSource = self
+        
+        //Map:
+        mapView.delegate = self
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         
         //Seperator:
         verticalTableView.separatorStyle = .singleLine
@@ -134,14 +148,24 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     
+    //Map:
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
+        let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
+        let region = MKCoordinateRegion(center: location, span: span)
+        mapView.setRegion(region, animated: true)
+    }
     
     
-
+    
+    
+    
+    
+    
     
 
 }
-
-
 
 
 

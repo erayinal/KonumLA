@@ -13,7 +13,7 @@ class ProfileSettingsController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = "Settings"
+        self.title = "Ayarlar"
     }
     
 

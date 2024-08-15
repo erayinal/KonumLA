@@ -36,7 +36,7 @@ class ProfileChangePasswordController: UIViewController {
             
             // Do any additional setup after loading the view.
             
-            self.title = "Change Password"
+            self.title = "Şifreyi Değiştir"
             
             currentImage.image = PasswordIcon.hide.image
             newPassImage.image = PasswordIcon.hide.image
