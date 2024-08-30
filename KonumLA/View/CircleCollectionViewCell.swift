@@ -28,8 +28,8 @@ class CircleCollectionViewCell: UICollectionViewCell {
     private let myLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 13) // Yazı tipi boyutu ayarlanıyor
-        label.textColor = .black // Yazı rengi ayarlanıyor
+        label.font = UIFont.boldSystemFont(ofSize: 13) // Yazı tipi boyutu
+        label.textColor = .black // Yazı rengi
         return label
     }()
     

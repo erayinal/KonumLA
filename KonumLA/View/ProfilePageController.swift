@@ -16,6 +16,7 @@ class ProfilePageController: UIViewController, UITableViewDelegate, UITableViewD
     
     let settingsArr:[ProfileSettingsModel] = [
     ProfileSettingsModel(imageName: "ProfileTableImage", title: "Profil"),
+    ProfileSettingsModel(imageName: "sharedEventsImage", title: "Paylaşımlarım"),
     ProfileSettingsModel(imageName: "SettingsTableImage", title: "Ayarlar"),
     ProfileSettingsModel(imageName: "ChangePasswordTableImage", title: "Şifreyi Değiştir"),
     ProfileSettingsModel(imageName: "SupportTableImage", title: "Yardım ve Destek")
@@ -23,10 +24,14 @@ class ProfilePageController: UIViewController, UITableViewDelegate, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
         profileTableView.delegate = self
         profileTableView.dataSource = self
+        
+        //Profil resmi yuvarlak şekil:
+        profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
+        profileImageView.clipsToBounds = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,6 +53,10 @@ class ProfilePageController: UIViewController, UITableViewDelegate, UITableViewD
             case "Profil":
                 if let profileVC = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") {
                     navigationController?.pushViewController(profileVC, animated: true)
+                }
+            case "Paylaşımlarım":
+                if let sharedEventsVC = storyboard?.instantiateViewController(withIdentifier: "SharedEventsViewController") {
+                    navigationController?.pushViewController(sharedEventsVC, animated: true)
                 }
             case "Ayarlar":
                 if let settingsVC = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") {

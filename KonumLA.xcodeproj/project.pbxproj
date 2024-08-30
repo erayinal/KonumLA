@@ -29,6 +29,7 @@
 		E830A1C42C52689400082E49 /* ProfileHelpSupportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830A1C32C52689400082E49 /* ProfileHelpSupportController.swift */; };
 		E830A1C62C526B7A00082E49 /* ProfileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830A1C52C526B7A00082E49 /* ProfileTableCell.swift */; };
 		E830A1C82C52707100082E49 /* ProfileSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830A1C72C52707100082E49 /* ProfileSettingsModel.swift */; };
+		E852305A2C809461005C17A0 /* SharedEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85230592C809461005C17A0 /* SharedEventsController.swift */; };
 		E88444E62C4FECBC009FCC71 /* CircleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88444E52C4FECBC009FCC71 /* CircleCollectionViewCell.swift */; };
 		E88444E82C4FFCC9009FCC71 /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88444E72C4FFCC9009FCC71 /* CategoriesModel.swift */; };
 		E88444EA2C5018BA009FCC71 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88444E92C5018BA009FCC71 /* EventModel.swift */; };
@@ -60,6 +61,7 @@
 		E830A1C32C52689400082E49 /* ProfileHelpSupportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHelpSupportController.swift; sourceTree = "<group>"; };
 		E830A1C52C526B7A00082E49 /* ProfileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableCell.swift; sourceTree = "<group>"; };
 		E830A1C72C52707100082E49 /* ProfileSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsModel.swift; sourceTree = "<group>"; };
+		E85230592C809461005C17A0 /* SharedEventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedEventsController.swift; sourceTree = "<group>"; };
 		E88444E52C4FECBC009FCC71 /* CircleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewCell.swift; sourceTree = "<group>"; };
 		E88444E72C4FFCC9009FCC71 /* CategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
 		E88444E92C5018BA009FCC71 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				E830A1BB2C52673C00082E49 /* ProfileInfoPageController.swift */,
+				E85230592C809461005C17A0 /* SharedEventsController.swift */,
 				E830A1C12C52687000082E49 /* ProfileSettingsController.swift */,
 				E830A1BE2C52684800082E49 /* ProfileChangePasswordController.swift */,
 				E830A1C32C52689400082E49 /* ProfileHelpSupportController.swift */,
@@ -264,6 +267,7 @@
 				E88444E62C4FECBC009FCC71 /* CircleCollectionViewCell.swift in Sources */,
 				E8163FEB2C4C4E94005306B2 /* AppDelegate.swift in Sources */,
 				E8930F512C4EC3B100E5C2CF /* SignUpController.swift in Sources */,
+				E852305A2C809461005C17A0 /* SharedEventsController.swift in Sources */,
 				E88444E82C4FFCC9009FCC71 /* CategoriesModel.swift in Sources */,
 				E8163FED2C4C4E94005306B2 /* SceneDelegate.swift in Sources */,
 				E8FEA3922C6900F20035AF07 /* HomeEventsViewCell.swift in Sources */,

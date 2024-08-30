@@ -58,5 +58,12 @@ class HomeEventsViewCell: UITableViewCell {
     @objc func shareImageTapped(){
         
     }
+    
+    
 
 }
+
+
+
+
+

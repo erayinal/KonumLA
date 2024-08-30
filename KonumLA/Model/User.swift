@@ -11,12 +11,21 @@ import FirebaseAuth
 struct User {
     
     let uid: String
-    let username: String
-    var profileImageURL: String
+    var username: String
+    let gender: String
+    var profileImageURL: String?
     let bio: String
-    var postCount: Int
     
+    var sharedEventArr: [String] = []
+    var savedEventArr: [String] = []
     
+    init(uid: String, username: String, gender: String, profileImageURL: String?, bio: String) {
+        self.uid = uid
+        self.username = username
+        self.gender = gender
+        self.profileImageURL = profileImageURL
+        self.bio = bio
+    }
     
     
 }
@@ -27,7 +36,5 @@ struct User {
 class AuthService{
     
     static let shared = AuthService()
-        
-        
         
 }

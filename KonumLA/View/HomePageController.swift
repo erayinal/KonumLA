@@ -8,6 +8,8 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Firebase
+import FirebaseStorage
 
 class HomePageController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -19,22 +21,25 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
     var locationManager = CLLocationManager()
     
     
+    let fireStoreDatabase = Firestore.firestore()
+    
+    
     
     //Collection:
     private var collectionView: UICollectionView?
     public let sizeOfCategoriesCircle = 70
     
     let categoriesArr: [CategoriesModel] = [
-        CategoriesModel(image: "artCategoryImage2", title: "Art"),
-        CategoriesModel(image: "musicCategoryImage2", title: "Music"),
-        CategoriesModel(image: "cookingCategoryImage2", title: "Cooking"),
-        CategoriesModel(image: "technologyCategoryImage2", title: "Technology"),
-        CategoriesModel(image: "funCategoryImage2", title: "Fun"),
-        CategoriesModel(image: "celebrationCategoryImage2", title: "Celebrate"),
-        CategoriesModel(image: "joyCategoryImage2", title: "Joy"),
-        CategoriesModel(image: "sportsCategoryImage2", title: "Sports"),
-        CategoriesModel(image: "tripCategoryImage2", title: "Trip"),
-        CategoriesModel(image: "partyCategoryImage", title: "Party"),
+        CategoriesModel(image: "artCategoryImage2", title: "Sanat"),
+        CategoriesModel(image: "musicCategoryImage2", title: "Müzik"),
+        CategoriesModel(image: "cookingCategoryImage2", title: "Aşçılık"),
+        CategoriesModel(image: "technologyCategoryImage2", title: "Teknoloji"),
+        CategoriesModel(image: "funCategoryImage2", title: "Eğlence"),
+        CategoriesModel(image: "celebrationCategoryImage2", title: "Kutlama"),
+        CategoriesModel(image: "joyCategoryImage2", title: "Neşe"),
+        CategoriesModel(image: "sportsCategoryImage2", title: "Spor"),
+        CategoriesModel(image: "tripCategoryImage2", title: "Gezi"),
+        CategoriesModel(image: "partyCategoryImage", title: "Parti"),
         
     ]
     
@@ -90,7 +95,11 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        
+        //fireStoreDatabase.collection("").whereField("latitude", isGreaterThanOrEqualTo: <#T##Any#>)
+        
         return 10
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -141,7 +150,6 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CircleCollectionViewCell.identifier, for: indexPath) as! CircleCollectionViewCell
         cell.configure(with: categoriesArr[indexPath.row].image, title: categoriesArr[indexPath.row].title)
         
-        
         return cell
     }
     
@@ -156,7 +164,6 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
         let region = MKCoordinateRegion(center: location, span: span)
         mapView.setRegion(region, animated: true)
     }
-    
     
     
     

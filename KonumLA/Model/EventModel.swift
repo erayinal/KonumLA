@@ -10,17 +10,28 @@ import Foundation
 struct Post{
     
     let id: String
-    let user: User
-    let imageUrl: String
-    let caption: String
-    let creationDate: Date
+    let uid: String
+    var imageUrlArr: [String] = []
+    var eventDescription: String
+    var caption: String
+    var category: String
+    let startDate: Date
+    let endDate: Date
     
-    init(id: String, user: User, imageUrl: String, caption: String) {
+    var latitude: String
+    var longitude: String
+    
+    init(id: String, uid: String, imageUrlArr: [String], eventDescription: String, startDate: Date, endDate: Date, caption: String, category: String, latitude: String, longitude: String) {
         self.id = id
-        self.user = user
-        self.imageUrl = imageUrl
+        self.uid = uid
+        self.imageUrlArr = imageUrlArr
+        self.eventDescription = eventDescription
         self.caption = caption
-        self.creationDate = Date()
+        self.category = category
+        self.startDate = startDate
+        self.endDate = endDate
+        self.latitude = latitude
+        self.longitude = longitude
     }
     
 }
