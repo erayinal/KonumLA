@@ -30,6 +30,8 @@
 		E830A1C62C526B7A00082E49 /* ProfileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830A1C52C526B7A00082E49 /* ProfileTableCell.swift */; };
 		E830A1C82C52707100082E49 /* ProfileSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830A1C72C52707100082E49 /* ProfileSettingsModel.swift */; };
 		E852305A2C809461005C17A0 /* SharedEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85230592C809461005C17A0 /* SharedEventsController.swift */; };
+		E852305C2C8CC5AA005C17A0 /* EventShareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E852305B2C8CC5AA005C17A0 /* EventShareController.swift */; };
+		E852305E2C8F2B08005C17A0 /* EventShareSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E852305D2C8F2B08005C17A0 /* EventShareSecondController.swift */; };
 		E88444E62C4FECBC009FCC71 /* CircleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88444E52C4FECBC009FCC71 /* CircleCollectionViewCell.swift */; };
 		E88444E82C4FFCC9009FCC71 /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88444E72C4FFCC9009FCC71 /* CategoriesModel.swift */; };
 		E88444EA2C5018BA009FCC71 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88444E92C5018BA009FCC71 /* EventModel.swift */; };
@@ -62,6 +64,8 @@
 		E830A1C52C526B7A00082E49 /* ProfileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableCell.swift; sourceTree = "<group>"; };
 		E830A1C72C52707100082E49 /* ProfileSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsModel.swift; sourceTree = "<group>"; };
 		E85230592C809461005C17A0 /* SharedEventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedEventsController.swift; sourceTree = "<group>"; };
+		E852305B2C8CC5AA005C17A0 /* EventShareController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventShareController.swift; sourceTree = "<group>"; };
+		E852305D2C8F2B08005C17A0 /* EventShareSecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventShareSecondController.swift; sourceTree = "<group>"; };
 		E88444E52C4FECBC009FCC71 /* CircleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewCell.swift; sourceTree = "<group>"; };
 		E88444E72C4FFCC9009FCC71 /* CategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
 		E88444E92C5018BA009FCC71 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 				E81640192C4C69EC005306B2 /* LoginController.swift */,
 				E8930F502C4EC3B100E5C2CF /* SignUpController.swift */,
 				E8930F542C4EEB5C00E5C2CF /* HomePageController.swift */,
+				E852305B2C8CC5AA005C17A0 /* EventShareController.swift */,
+				E852305D2C8F2B08005C17A0 /* EventShareSecondController.swift */,
 				E88444E52C4FECBC009FCC71 /* CircleCollectionViewCell.swift */,
 				E8FEA3912C6900F20035AF07 /* HomeEventsViewCell.swift */,
 			);
@@ -265,9 +271,11 @@
 				E830A1BC2C52673C00082E49 /* ProfileInfoPageController.swift in Sources */,
 				E830A1C82C52707100082E49 /* ProfileSettingsModel.swift in Sources */,
 				E88444E62C4FECBC009FCC71 /* CircleCollectionViewCell.swift in Sources */,
+				E852305C2C8CC5AA005C17A0 /* EventShareController.swift in Sources */,
 				E8163FEB2C4C4E94005306B2 /* AppDelegate.swift in Sources */,
 				E8930F512C4EC3B100E5C2CF /* SignUpController.swift in Sources */,
 				E852305A2C809461005C17A0 /* SharedEventsController.swift in Sources */,
+				E852305E2C8F2B08005C17A0 /* EventShareSecondController.swift in Sources */,
 				E88444E82C4FFCC9009FCC71 /* CategoriesModel.swift in Sources */,
 				E8163FED2C4C4E94005306B2 /* SceneDelegate.swift in Sources */,
 				E8FEA3922C6900F20035AF07 /* HomeEventsViewCell.swift in Sources */,
