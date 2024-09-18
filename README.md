@@ -19,8 +19,9 @@ This platform is a social network where users can share events in their local ar
 
 
 ## Share Event Page
-<img src="https://github.com/user-attachments/assets/f2443d73-b6f6-41c8-862f-1a319a074b05" width=30% height=30%>
-<img src="https://github.com/user-attachments/assets/43e18236-8fe6-498d-98e5-efeeaf015385" width=30% height=30%>
+<img src="https://github.com/user-attachments/assets/2c6e2301-e637-4914-a337-ced0694928ed" width=30% height=30%>
+<img src="https://github.com/user-attachments/assets/9ff5cefd-0555-4e6b-a8eb-7f7f07c839f5" width=30% height=30%>
+
 
 
 ## Profile Page
