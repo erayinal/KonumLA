@@ -7,13 +7,17 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseStorage
+import FirebaseFirestore
 
 class SignUpController: UIViewController {
     
     @IBOutlet weak var loginLabel: UILabel! //Giriş Yap metni
     
     @IBOutlet weak var nameText: UITextField!
-    @IBOutlet weak var surnameText: UITextField!
+    
+    @IBOutlet weak var usernameText: UITextField!
+    
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var passwordConfirmText: UITextField!
@@ -43,7 +47,37 @@ class SignUpController: UIViewController {
                     if(error != nil){
                         self.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Eror")
                     }else{
-                        self.performSegue(withIdentifier: "fromSignupToHomeVC", sender: nil)
+                        
+                        let firestoreDatabase = Firestore.firestore()
+                        var firestoreReference : DocumentReference? = nil
+                        
+                        let user = User(
+                            uid: Auth.auth().currentUser?.uid ?? "",
+                            nameAndSurname: self.nameText.text!,
+                            username: self.usernameText.text!,
+                            gender: "",
+                            profileImageURL: "",
+                            bio: ""
+                        )
+                        
+                        let firestoreUser : [String: Any] = [
+                            "uid": user.uid,
+                            "nameAndSurname" : user.nameAndSurname,
+                            "username" : user.username,
+                            "profileImageUrl" : user.profileImageURL,
+                            "bio" : user.bio,
+                            "gender" : user.gender,
+                        ]
+                        
+                        firestoreDatabase.collection("Users").document(user.uid).setData(firestoreUser){error in
+                            if let error = error {
+                                self.makeAlert(title: "ERROR!", message: error.localizedDescription)
+                            }else{
+                                self.performSegue(withIdentifier: "fromSignupToHomeVC", sender: nil)
+                            }
+                        }
+                        
+                        
                     }
                 }
             }else{

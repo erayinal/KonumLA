@@ -8,10 +8,15 @@
 import UIKit
 import MapKit
 import CoreLocation
+import FirebaseAuth
 
 class EventShareController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    
+    var selectedLatitude: CLLocationDegrees?
+    var selectedLongitude: CLLocationDegrees?
+    var selectedAddress: String?
     
     
     var locationManager = CLLocationManager()
@@ -30,12 +35,16 @@ class EventShareController: UIViewController, MKMapViewDelegate, CLLocationManag
         locationManager.startUpdatingLocation()
         
         let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(pinnedLocation(gestureRecognizer:)))
-        gestureRecognizer.minimumPressDuration = 1.5
+        gestureRecognizer.minimumPressDuration = 1
         mapView.addGestureRecognizer(gestureRecognizer)
+        
         
     }
     
     @IBAction func continueButton(_ sender: Any) {
+        if(selectedLatitude == nil || selectedLongitude == nil){
+            self.makeAlert(title: "HATA", message: "Konum seçilmedi.")
+        }
         performSegue(withIdentifier: "toEventShareSecondPage", sender: nil)
     }
     
@@ -67,13 +76,37 @@ class EventShareController: UIViewController, MKMapViewDelegate, CLLocationManag
                     print("Reverse geocoding hatası: \(error.localizedDescription)")
                     annotation.title = "Bilinmeyen Konum"
                 } else if let placemark = placemarks?.first {
-                    annotation.title = placemark.name ?? ""
+                    // Ayrıntılı adres bilgilerini al
+                    let street = placemark.thoroughfare ?? " "
+                    let subThoroughfare = placemark.subThoroughfare ?? " "
+                    let city = placemark.locality ?? " "
+                    let state = placemark.administrativeArea ?? " "
+                    let postalCode = placemark.postalCode ?? " "
+                    let country = placemark.country ?? " "
+
+                    let detailedAddress = "\(subThoroughfare) \(street), \(city), \(state), \(postalCode), \(country)"
+                    annotation.title = detailedAddress
+                    self.selectedAddress = detailedAddress
                 }
+                
+                self.selectedLatitude = touchedCoordinate.latitude
+                self.selectedLongitude = touchedCoordinate.longitude
+                
                 self.mapView.addAnnotation(annotation)
             }
             
         }
-        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEventShareSecondPage" {
+            if let destinationVC = segue.destination as? EventShareSecondController {
+                destinationVC.latitude = selectedLatitude
+                destinationVC.longitude = selectedLongitude
+                destinationVC.address = selectedAddress
+            }
+        }
     }
     
     

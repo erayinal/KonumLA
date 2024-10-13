@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Post{
+struct Event{
     
     let id: String
     let uid: String
@@ -17,11 +17,14 @@ struct Post{
     var category: String
     let startDate: Date
     let endDate: Date
+    var numberOfGirls : Int
+    var numberOfBoys : Int
+    var isApprovalRequired: Bool
     
     var latitude: String
     var longitude: String
     
-    init(id: String, uid: String, imageUrlArr: [String], eventDescription: String, startDate: Date, endDate: Date, caption: String, category: String, latitude: String, longitude: String) {
+    init(id: String, uid: String, imageUrlArr: [String], eventDescription: String, startDate: Date, endDate: Date, caption: String, category: String, latitude: String, longitude: String, numberOfGirls: Int, numberOfBoys: Int, isApprovalRequired: Bool) {
         self.id = id
         self.uid = uid
         self.imageUrlArr = imageUrlArr
@@ -32,6 +35,9 @@ struct Post{
         self.endDate = endDate
         self.latitude = latitude
         self.longitude = longitude
+        self.numberOfGirls = numberOfGirls
+        self.numberOfBoys = numberOfBoys
+        self.isApprovalRequired = isApprovalRequired
     }
     
 }

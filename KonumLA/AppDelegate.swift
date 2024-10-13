@@ -19,6 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
+        UserManager.shared.fetchUserData { success in
+            if success {
+                print("User data fetched successfully.")
+            } else {
+                print("Failed to fetch user data.")
+            }
+        }
+        
         return true
     }
 

@@ -63,19 +63,14 @@ class UserViewModel {
         let user = Auth.auth().currentUser
         let credential = EmailAuthProvider.credential(withEmail: currentEmail, password: currentPassword)
         
-        // Yeniden kimlik doğrulama
         user?.reauthenticate(with: credential, completion: { authResult, error in
             if let error = error {
-                // Yeniden kimlik doğrulama başarısız
                 completion(false, error)
             } else {
-                // Yeniden kimlik doğrulama başarılı, e-posta adresini güncelle
                 user?.updateEmail(to: newEmail, completion: { error in
                     if let error = error {
-                        // E-posta güncelleme hatası
                         completion(false, error)
                     } else {
-                        // E-posta başarıyla güncellendi
                         completion(true, nil)
                     }
                 })

@@ -39,6 +39,7 @@
 		E8930F532C4ED34900E5C2CF /* AuthViewModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8930F522C4ED34900E5C2CF /* AuthViewModelController.swift */; };
 		E8930F552C4EEB5C00E5C2CF /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8930F542C4EEB5C00E5C2CF /* HomePageController.swift */; };
 		E8A07A062C55135A0015D914 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A07A052C55135A0015D914 /* UserViewModel.swift */; };
+		E8F7BD152CB97D9300EF032A /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F7BD142CB97D9300EF032A /* UserManager.swift */; };
 		E8FEA3922C6900F20035AF07 /* HomeEventsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FEA3912C6900F20035AF07 /* HomeEventsViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		E8930F522C4ED34900E5C2CF /* AuthViewModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModelController.swift; sourceTree = "<group>"; };
 		E8930F542C4EEB5C00E5C2CF /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
 		E8A07A052C55135A0015D914 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		E8F7BD142CB97D9300EF032A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		E8FEA3912C6900F20035AF07 /* HomeEventsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventsViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 			children = (
 				E8930F522C4ED34900E5C2CF /* AuthViewModelController.swift */,
 				E8A07A052C55135A0015D914 /* UserViewModel.swift */,
+				E8F7BD142CB97D9300EF032A /* UserManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				E8FEA3922C6900F20035AF07 /* HomeEventsViewCell.swift in Sources */,
 				E830A1C42C52689400082E49 /* ProfileHelpSupportController.swift in Sources */,
 				E81640122C4C6128005306B2 /* User.swift in Sources */,
+				E8F7BD152CB97D9300EF032A /* UserManager.swift in Sources */,
 				E830A1C22C52687000082E49 /* ProfileSettingsController.swift in Sources */,
 				E88444EA2C5018BA009FCC71 /* EventModel.swift in Sources */,
 				E816401A2C4C69EC005306B2 /* LoginController.swift in Sources */,
