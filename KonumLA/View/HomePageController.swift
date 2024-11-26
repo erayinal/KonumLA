@@ -23,6 +23,7 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
     
     let fireStoreDatabase = Firestore.firestore()
     
+    var events: [Event] = []
     
     
     //Collection:
@@ -91,31 +92,42 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
         }
         view.addSubview(myCollection)
         
+        
+        
+        fetchEventsFromFirebase()
+        
     }
     
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
-        //fireStoreDatabase.collection("").whereField("latitude", isGreaterThanOrEqualTo: <#T##Any#>)
-        
-        return 10
-        
-    }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = verticalTableView.dequeueReusableCell(withIdentifier: "mainEventsCell", for: indexPath) as! HomeEventsViewCell
-        //var content = cell.defaultContentConfiguration()
-        cell.backgroundColor = .white
-        cell.selectionStyle = .none
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mainEventsCell", for: indexPath) as! HomeEventsViewCell
+            let event = events[indexPath.row]
+            
+            cell.eventTitleLabel.text = event.caption
+            cell.eventDescriptionLabel.text = event.eventDescription
         
-        //content.text = "Eray"
+            // Tarih formatlama
+            let formattedStartDate = formatDate(event.startDate)
+            cell.eventDateLabel.text = "\(formattedStartDate)"
         
-        //cell.contentConfiguration=content
-        return cell
+            if let imageUrl = event.imageUrlArr.first, let url = URL(string: imageUrl) {
+                // Resim yükleme (örn. Kingfisher veya URLSession ile)
+                URLSession.shared.dataTask(with: url) { data, _, _ in
+                    if let data = data {
+                        DispatchQueue.main.async {
+                            cell.eventImageView.image = UIImage(data: data)
+                        }
+                    }
+                }.resume()
+            }
+            return cell
     }
     
     
@@ -168,6 +180,52 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     
+    
+    // Firebase Çekme:
+    func fetchEventsFromFirebase() {
+        fireStoreDatabase.collection("Events")
+            .order(by: "date", descending: true) // Tarihe göre sıralama
+            .addSnapshotListener { [weak self] (snapshot, error) in
+                
+                guard let self = self else { return }
+                if let error = error {
+                    print("Error fetching events: \(error)")
+                } else if let snapshot = snapshot {
+                    self.events = snapshot.documents.compactMap { doc in
+                        let data = doc.data()
+                        guard let timestamp = data["date"] as? Timestamp else { return nil }
+                        return Event(
+                            date: timestamp.dateValue(),
+                            id: data["id"] as? String ?? "",
+                            uid: data["uid"] as? String ?? "",
+                            imageUrlArr: data["imageUrlArr"] as? [String] ?? [],
+                            eventDescription: data["eventDescription"] as? String ?? "",
+                            startDate: (data["startDate"] as? Timestamp)?.dateValue() ?? Date(),
+                            endDate: (data["endDate"] as? Timestamp)?.dateValue() ?? Date(),
+                            caption: data["caption"] as? String ?? "",
+                            category: data["category"] as? String ?? "",
+                            latitude: data["latitude"] as? String ?? "",
+                            longitude: data["longitude"] as? String ?? "",
+                            numberOfGirls: data["numberOfGirls"] as? Int ?? 0,
+                            numberOfBoys: data["numberOfBoys"] as? Int ?? 0,
+                            isApprovalRequired: data["isApprovalRequired"] as? Bool ?? false
+                        )
+                    }
+                    DispatchQueue.main.async {
+                        self.verticalTableView.reloadData() // Tabloyu güncelle
+                    }
+                }
+            }
+    }
+    
+    
+    
+    func formatDate(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEE, MMM dd HH:mm" // İstediğiniz format
+        formatter.locale = Locale(identifier: "en_US") // İngilizce dil desteği
+        return formatter.string(from: date)
+    }
     
     
     

@@ -9,6 +9,7 @@ import Foundation
 
 struct Event{
     
+    let date : Date
     let id: String
     let uid: String
     var imageUrlArr: [String] = []
@@ -24,7 +25,8 @@ struct Event{
     var latitude: String
     var longitude: String
     
-    init(id: String, uid: String, imageUrlArr: [String], eventDescription: String, startDate: Date, endDate: Date, caption: String, category: String, latitude: String, longitude: String, numberOfGirls: Int, numberOfBoys: Int, isApprovalRequired: Bool) {
+    init(date: Date, id: String, uid: String, imageUrlArr: [String], eventDescription: String, startDate: Date, endDate: Date, caption: String, category: String, latitude: String, longitude: String, numberOfGirls: Int, numberOfBoys: Int, isApprovalRequired: Bool) {
+        self.date = date
         self.id = id
         self.uid = uid
         self.imageUrlArr = imageUrlArr

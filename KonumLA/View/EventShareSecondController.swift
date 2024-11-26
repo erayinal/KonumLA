@@ -198,6 +198,7 @@ class EventShareSecondController: UIViewController, UIPickerViewDelegate, UIPick
                 var firestoreReference : DocumentReference? = nil
                 
                 let event = Event(
+                    date : Date(),
                     id: UUID().uuidString,
                     uid: Auth.auth().currentUser?.uid ?? "",
                     imageUrlArr: imageUrlArr,
@@ -214,6 +215,7 @@ class EventShareSecondController: UIViewController, UIPickerViewDelegate, UIPick
                 )
                 
                 let firestoreEvent: [String: Any] = [
+                    "date": FieldValue.serverTimestamp(),
                     "id": event.id,
                     "uid": event.uid,
                     "imageUrlArr": event.imageUrlArr,
@@ -249,6 +251,8 @@ class EventShareSecondController: UIViewController, UIPickerViewDelegate, UIPick
         
         
     }
+    
+    
     
     
     
