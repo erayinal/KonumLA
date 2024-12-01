@@ -223,7 +223,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nwK-9I-O4t">
-                                                    <rect key="frame" x="20" y="11.666666666666664" width="40" height="40.000000000000007"/>
+                                                    <rect key="frame" x="20" y="11.666666666666664" width="40" height="40"/>
                                                     <color key="tintColor" systemColor="labelColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="41.329999999999998" id="BQK-lt-FEh"/>
@@ -308,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W7Y-Jj-x0y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6715.2671755725187" y="850.70422535211276"/>
+            <point key="canvasLocation" x="5784" y="1977"/>
         </scene>
         <!--Etkinlik Konumu-->
         <scene sceneID="mHh-Yk-lZU">
@@ -400,18 +400,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photoEvent1" translatesAutoresizingMaskIntoConstraints="NO" id="i96-83-aBZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="addEventImages5" translatesAutoresizingMaskIntoConstraints="NO" id="i96-83-aBZ">
                                 <rect key="frame" x="16" y="100" width="80" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photoEvent3" translatesAutoresizingMaskIntoConstraints="NO" id="gFb-Sd-l65">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="addEventImages5" translatesAutoresizingMaskIntoConstraints="NO" id="gFb-Sd-l65">
                                 <rect key="frame" x="204" y="98" width="80" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photoEvent4" translatesAutoresizingMaskIntoConstraints="NO" id="95J-g0-lCY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="addEventImages5" translatesAutoresizingMaskIntoConstraints="NO" id="95J-g0-lCY">
                                 <rect key="frame" x="297" y="98" width="80" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -498,7 +498,7 @@
                                     <action selector="ShareButtonClicked:" destination="gPp-3u-fe2" eventType="touchUpInside" id="dVN-kT-eO3"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photoEvent2" translatesAutoresizingMaskIntoConstraints="NO" id="HmL-mP-HF1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="addEventImages5" translatesAutoresizingMaskIntoConstraints="NO" id="HmL-mP-HF1">
                                 <rect key="frame" x="110" y="100" width="80" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -675,11 +675,28 @@
                     <connections>
                         <outlet property="mapView" destination="BdP-lV-JO7" id="Imc-em-oNN"/>
                         <outlet property="verticalTableView" destination="J4k-Nc-AOX" id="8Ph-He-gAY"/>
+                        <segue destination="6Bm-1g-She" kind="show" identifier="toCategoryPage" id="IOz-2j-Qjd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cF2-cq-LOn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3478.6259541984732" y="-1009.1549295774648"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ibz-jc-phq">
+            <objects>
+                <viewController id="6Bm-1g-She" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rc4-pW-q9b">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="V8x-nh-6SL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iy3-2r-JHD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4bm-qu-c8u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4404" y="-1009"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZZ4-Nx-Pvd">
@@ -754,7 +771,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RP0-yV-d9t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5789" y="2280"/>
+            <point key="canvasLocation" x="5784" y="3377"/>
         </scene>
         <!--Shared Events Controller-->
         <scene sceneID="4XB-7b-wUo">
@@ -770,7 +787,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTW-cN-Qo1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5788.5496183206105" y="1563.3802816901409"/>
+            <point key="canvasLocation" x="5784" y="2661"/>
         </scene>
         <!--Profile Change Password Controller-->
         <scene sceneID="3D5-kF-ZDR">
@@ -840,7 +857,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBM-Pc-ByE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5789" y="3011"/>
+            <point key="canvasLocation" x="5784" y="4108"/>
         </scene>
         <!--Profile Help Support Controller-->
         <scene sceneID="3Gv-7u-8Md">
@@ -856,7 +873,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8m-8W-41N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5789" y="3701"/>
+            <point key="canvasLocation" x="5784" y="4798"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qpM-j0-n94">
@@ -904,16 +921,13 @@
     <resources>
         <image name="22" width="591" height="709"/>
         <image name="Default.png" width="320" height="568"/>
+        <image name="addEventImages5" width="800" height="1200"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="hidePassordIcon" width="30" height="30"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="logo1" width="1024" height="1024"/>
         <image name="message.fill" catalog="system" width="128" height="114"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
-        <image name="photoEvent1" width="1920" height="1080"/>
-        <image name="photoEvent2" width="300" height="168"/>
-        <image name="photoEvent3" width="1024" height="683"/>
-        <image name="photoEvent4" width="265" height="190"/>
         <image name="plus.app" catalog="system" width="128" height="114"/>
         <image name="saved_button_default" width="128" height="128"/>
         <image name="square.and.arrow.up" catalog="system" width="110" height="128"/>
@@ -924,7 +938,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

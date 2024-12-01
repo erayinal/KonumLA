@@ -96,6 +96,8 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
         
         fetchEventsFromFirebase()
         
+        showAnnotationsOnMap()
+        
     }
     
     
@@ -110,24 +112,23 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainEventsCell", for: indexPath) as! HomeEventsViewCell
             let event = events[indexPath.row]
             
-            cell.eventTitleLabel.text = event.caption
-            cell.eventDescriptionLabel.text = event.eventDescription
+        cell.eventTitleLabel.text = event.caption
+        cell.eventDescriptionLabel.text = event.eventDescription
         
-            // Tarih formatlama
-            let formattedStartDate = formatDate(event.startDate)
-            cell.eventDateLabel.text = "\(formattedStartDate)"
+        // Tarih formatlama
+        let formattedStartDate = formatDate(event.startDate)
+        cell.eventDateLabel.text = "\(formattedStartDate)"
         
-            if let imageUrl = event.imageUrlArr.first, let url = URL(string: imageUrl) {
-                // Resim yükleme (örn. Kingfisher veya URLSession ile)
-                URLSession.shared.dataTask(with: url) { data, _, _ in
-                    if let data = data {
-                        DispatchQueue.main.async {
-                            cell.eventImageView.image = UIImage(data: data)
-                        }
+        if let imageUrl = event.imageUrlArr.first, let url = URL(string: imageUrl) {
+            URLSession.shared.dataTask(with: url) { data, _, _ in
+                if let data = data {
+                    DispatchQueue.main.async {
+                        cell.eventImageView.image = UIImage(data: data) // İlk resim kapak olarak gösterilir
                     }
-                }.resume()
-            }
-            return cell
+                }
+            }.resume()
+        }
+        return cell
     }
     
     
@@ -150,7 +151,7 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
     //Collection:
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionView?.frame = CGRect(x: 0, y: 285, width: Int(view.frame.size.width), height: sizeOfCategoriesCircle+20).integral
+        collectionView?.frame = CGRect(x: 0, y: 290, width: Int(view.frame.size.width), height: sizeOfCategoriesCircle+20).integral
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -222,16 +223,67 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
     
     func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "EEE, MMM dd HH:mm" // İstediğiniz format
-        formatter.locale = Locale(identifier: "en_US") // İngilizce dil desteği
+        formatter.dateFormat = "EEE, MMM dd HH:mm" // İstediğiniz format bu
+        formatter.locale = Locale(identifier: "en_US") // İngilice dil desteği
         return formatter.string(from: date)
     }
     
     
     
-
+    func showAnnotationsOnMap(){
+        var annotations : [MKPointAnnotation] = []
+        
+        let fireStoreDatabase = Firestore.firestore()
+        fireStoreDatabase.collection("Events").addSnapshotListener { (snapshot, error) in
+            
+            if error != nil{
+                print(error?.localizedDescription)
+                return
+            }
+            
+            guard let documents = snapshot?.documents else {
+                print("No documents found")
+                return
+            }
+            
+            for document in documents{
+                let data = document.data()
+                if let latitudeString = data["latitude"] as? String,
+                    let longitudeString = data["longitude"] as? String,
+                    let latitude = Double(latitudeString),
+                    let longitude = Double(longitudeString) {
+                    
+                        let annotation = MKPointAnnotation()
+                        annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                        annotation.title = data["caption"] as? String
+                        
+                        annotations.append(annotation)
+                }
+                
+                for elem in annotations{
+                    print(elem.coordinate)
+                }
+                    
+            }
+            self.mapView.addAnnotations(annotations)
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+ 
+    
+    
+    
+        
 }
-
+    
+    
 
 
 
