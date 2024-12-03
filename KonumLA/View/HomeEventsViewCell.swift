@@ -34,6 +34,10 @@ class HomeEventsViewCell: UITableViewCell {
         let shareTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(HomeEventsViewCell.shareImageTapped))
         shareImageView.addGestureRecognizer(shareTapGestureRecognizer)
         
+        eventImageView.layer.cornerRadius = 10
+        //eventImageView.layer.borderWidth = 1
+        //eventImageView.layer.borderColor = UIColor.lightGray.cgColor
+        
     }
     
 

@@ -59,9 +59,14 @@ class EventShareSecondController: UIViewController, UIPickerViewDelegate, UIPick
     let countArr: [String] = ["Belirtme"] + Array(0...100).map { "\($0)" }
     
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        activityIndicator.isHidden = true
         
         imagesArr = [imageView1, imageView2, imageView3, imageView4]
         
@@ -157,8 +162,13 @@ class EventShareSecondController: UIViewController, UIPickerViewDelegate, UIPick
         } else if explanationTextView.text == "Açıklama" || explanationTextView.text == "" {
             makeAlert(title: "HATA", message: "'Açıklama' boş bırakılamaz.")
         } else if let imageData = imageView1.image?.pngData(), let defaultImageData = defaultImage?.pngData(), imageData == defaultImageData{
-            makeAlert(title: "HATA", message: "'En az 1 resim eklemelisiniz.'")
+            makeAlert(title: "HATA", message: "En az 1 resim eklemelisiniz.")
         } else {
+            
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
+            view.isUserInteractionEnabled = false
+            
             let storage = Storage.storage()
             let storageReference = storage.reference()
             let eventsFolder = storageReference.child("Events")
@@ -244,6 +254,10 @@ class EventShareSecondController: UIViewController, UIPickerViewDelegate, UIPick
                 ]
                 
                 firestoreDatabase.collection("Events").document(event.id).setData(firestoreEvent) { error in
+                    
+                    self.activityIndicator.stopAnimating()      //Durdur
+                    self.view.isUserInteractionEnabled = true
+                    
                     if let error = error {
                         self.makeAlert(title: "ERROR!", message: error.localizedDescription)
                     } else {
@@ -252,11 +266,25 @@ class EventShareSecondController: UIViewController, UIPickerViewDelegate, UIPick
                         self.explanationTextView.text = ""
             
                     }
+                    
+                    self.clearEventSharePage()
+                    self.tabBarController?.selectedIndex = 0
+                    
                 }
             }
         }
+        
+        
+    }
+    
+    
+    func clearEventSharePage() {
         self.navigationController?.popViewController(animated: true)
-        self.tabBarController?.selectedIndex = 0
+        if let previousVC = navigationController?.viewControllers.first(where: { $0 is EventShareController }) as? EventShareController {
+            previousVC.mapView.removeAnnotations(previousVC.mapView.annotations)
+            previousVC.selectedLatitude = nil
+            previousVC.selectedLongitude = nil
+        }
     }
 
     
@@ -313,3 +341,9 @@ class EventShareSecondController: UIViewController, UIPickerViewDelegate, UIPick
     
     
 }
+
+
+
+
+
+

@@ -29,6 +29,9 @@ class EventShareController: UIViewController, MKMapViewDelegate, CLLocationManag
         
         mapView.delegate = self
         locationManager.delegate = self
+        mapView.layer.cornerRadius = 10
+        //mapView.layer.borderWidth = 1
+        //mapView.layer.borderColor = UIColor.lightGray.cgColor
         
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -43,7 +46,7 @@ class EventShareController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     @IBAction func continueButton(_ sender: Any) {
         if(selectedLatitude == nil || selectedLongitude == nil){
-            self.makeAlert(title: "HATA", message: "Konum seçilmedi.")
+            self.makeAlert(title: "HATA", message: "Etkinlik konumu seçmelisiniz.")
         }
         performSegue(withIdentifier: "toEventShareSecondPage", sender: nil)
     }

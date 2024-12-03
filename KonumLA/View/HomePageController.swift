@@ -58,6 +58,9 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        mapView.layer.cornerRadius = 10
+        //mapView.layer.borderWidth = 1
+        //mapView.layer.borderColor = UIColor.gray.cgColor
         
         //Seperator:
         verticalTableView.separatorStyle = .singleLine

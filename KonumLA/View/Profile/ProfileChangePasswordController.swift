@@ -42,6 +42,17 @@ class ProfileChangePasswordController: UIViewController {
             newPassImage.image = PasswordIcon.hide.image
             newPassAgainImage.image = PasswordIcon.hide.image
             
+            currentPassTextField.layer.cornerRadius = 5
+            currentPassTextField.layer.borderWidth = 1
+            currentPassTextField.layer.borderColor = UIColor.lightGray.cgColor
+            newPassTextField.layer.cornerRadius = 5
+            newPassTextField.layer.borderWidth = 1
+            newPassTextField.layer.borderColor = UIColor.lightGray.cgColor
+            newPassAgainTextField.layer.cornerRadius = 5
+            newPassAgainTextField.layer.borderWidth = 1
+            newPassAgainTextField.layer.borderColor = UIColor.lightGray.cgColor
+            
+            
             setupTapGestures()
         }
         
