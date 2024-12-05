@@ -86,7 +86,7 @@ class EventShareController: UIViewController, MKMapViewDelegate, CLLocationManag
                     let state = placemark.administrativeArea ?? " "
                     let postalCode = placemark.postalCode ?? " "
                     let country = placemark.country ?? " "
-
+                    
                     let detailedAddress = "\(subThoroughfare) \(street), \(city), \(state), \(postalCode), \(country)"
                     annotation.title = detailedAddress
                     self.selectedAddress = detailedAddress

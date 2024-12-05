@@ -147,6 +147,34 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
         return nil
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        fireStoreDatabase.collection("Events")
+                .order(by: "date", descending: true)
+                .getDocuments { [weak self] snapshot, error in
+                    guard let self = self else { return }
+                    
+                    if let error = error {
+                        print("Error fetching document: \(error)")
+                        return
+                    }
+                    
+                    guard let documents = snapshot?.documents else { return }
+                    
+                    // Seçilen belgenin verisini al
+                    let document = documents[indexPath.row]
+                    let data = document.data()
+                    
+                    // Detay sayfasına yönlendir
+                    if let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: "EventsDetailsViewController") as? EventsDetailsViewController {
+                        
+                        // Detay sayfasına verileri gönder
+                        detailsVC.eventData = data // eventData bir sözlük olacak
+                        
+                        self.navigationController?.pushViewController(detailsVC, animated: true)
+                    }
+                }
+    }
+    
     
     
     
@@ -212,7 +240,8 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
                             longitude: data["longitude"] as? String ?? "",
                             numberOfGirls: data["numberOfGirls"] as? Int ?? 0,
                             numberOfBoys: data["numberOfBoys"] as? Int ?? 0,
-                            isApprovalRequired: data["isApprovalRequired"] as? Bool ?? false
+                            isApprovalRequired: data["isApprovalRequired"] as? Bool ?? false,
+                            participants : data["participants"] as? [String] ?? []
                         )
                     }
                     DispatchQueue.main.async {
@@ -238,6 +267,8 @@ class HomePageController: UIViewController, UITableViewDelegate, UITableViewData
         
         let fireStoreDatabase = Firestore.firestore()
         fireStoreDatabase.collection("Events").addSnapshotListener { (snapshot, error) in
+            
+            
             
             if error != nil{
                 print(error?.localizedDescription)

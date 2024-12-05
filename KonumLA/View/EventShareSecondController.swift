@@ -233,7 +233,8 @@ class EventShareSecondController: UIViewController, UIPickerViewDelegate, UIPick
                     longitude: "\(self.longitude!)",
                     numberOfGirls: numberOfGirls,
                     numberOfBoys: numberOfBoys,
-                    isApprovalRequired: self.approvalSwitch.isOn
+                    isApprovalRequired: self.approvalSwitch.isOn,
+                    participants : []
                 )
                 
                 let firestoreEvent: [String: Any] = [

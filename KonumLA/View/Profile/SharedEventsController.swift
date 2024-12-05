@@ -14,7 +14,7 @@ class SharedEventsController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        self.title = "Etkinlikler"
+        self.title = "Paylaştığım Etkinlikler"
     }
     
 

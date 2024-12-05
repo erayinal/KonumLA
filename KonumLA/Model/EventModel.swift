@@ -22,10 +22,12 @@ struct Event{
     var numberOfBoys : Int
     var isApprovalRequired: Bool
     
+    var participants: [String] = []
+    
     var latitude: String
     var longitude: String
     
-    init(date: Date, id: String, uid: String, imageUrlArr: [String], eventDescription: String, startDate: Date, endDate: Date, caption: String, category: String, latitude: String, longitude: String, numberOfGirls: Int, numberOfBoys: Int, isApprovalRequired: Bool) {
+    init(date: Date, id: String, uid: String, imageUrlArr: [String], eventDescription: String, startDate: Date, endDate: Date, caption: String, category: String, latitude: String, longitude: String, numberOfGirls: Int, numberOfBoys: Int, isApprovalRequired: Bool , participants: [String]) {
         self.date = date
         self.id = id
         self.uid = uid
@@ -40,6 +42,7 @@ struct Event{
         self.numberOfGirls = numberOfGirls
         self.numberOfBoys = numberOfBoys
         self.isApprovalRequired = isApprovalRequired
+        self.participants = participants
     }
     
 }
